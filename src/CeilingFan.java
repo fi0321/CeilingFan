@@ -3,12 +3,10 @@ import java.time.LocalDate;
 public class CeilingFan {
 	private int speed;// variable that holds the current speed of the fan
 	private boolean clockwiseDirection;// direction of the fan
-	private final LocalDate presentDate;// date of present day
 
 	public CeilingFan() {
 		this.speed = 0;
 		this.clockwiseDirection = true;
-		this.presentDate = LocalDate.now();
 
 		// Information the user that the fan will not operate on December 25.
 		if (isOffDay()) {
@@ -31,13 +29,11 @@ public class CeilingFan {
 		this.speed = speed;
 	}
 
-	public LocalDate getPresentDate() {
-		return presentDate;
-	}
 
 	// Setting offday as true if the current date is December 25.
 	public boolean isOffDay() {
-		return this.presentDate.getMonthValue() == 12 && this.presentDate.getDayOfMonth() == 25;
+		LocalDate presentDate = LocalDate.now();
+		return presentDate.getMonthValue() == 12 && presentDate.getDayOfMonth() == 25;
 	}
 
 	// Method that enacts the pulling the cord for speed

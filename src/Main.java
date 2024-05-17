@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 import java.util.Scanner;
 
 public class Main {
@@ -5,7 +6,7 @@ public class Main {
 		CeilingFan ceilingFan = new CeilingFan();
 		Scanner scanner = new Scanner(System.in);
 
-		System.out.println("The date today is " + ceilingFan.getPresentDate() + "\n");
+		System.out.println("The date today is " + LocalDate.now() + "\n");
 
 		// Instructions for the user
 		System.out.println(
